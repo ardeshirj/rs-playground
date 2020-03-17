@@ -1,3 +1,2 @@
-pub mod my_tuples;
-pub use self::my_tuples::transpose;
-pub use self::my_tuples::Matrix;
+pub mod tuples;
+pub use self::tuples::Matrix;

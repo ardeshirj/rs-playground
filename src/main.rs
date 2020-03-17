@@ -51,5 +51,5 @@ fn run_primitives() {
    println!("{}", matrix);
 
    println!("Matrix:\n{}", matrix);
-   println!("Transpose:\n{}", primitives::transpose(matrix));
+   println!("Transpose:\n{}", primitives::tuples::transpose(matrix));
 }

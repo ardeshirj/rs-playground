@@ -3,7 +3,7 @@ mod primitives;
 
 fn main() {
    // run_hello_word();
-   // run_primitives();
+   run_primitives();
 }
 
 #[allow(dead_code)]
@@ -48,5 +48,8 @@ fn run_hello_word() {
 #[allow(dead_code)]
 fn run_primitives() {
    let matrix = primitives::Matrix::new(1.1, 1.2, 2.1, 2.2);
-   println!("{}", matrix)
+   println!("{}", matrix);
+
+   println!("Matrix:\n{}", matrix);
+   println!("Transpose:\n{}", primitives::transpose(matrix));
 }

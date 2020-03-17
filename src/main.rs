@@ -1,9 +1,33 @@
+mod common_types;
 mod hello_world;
 mod primitives;
 
 fn main() {
+   run_common_types();
+   // run_primitives();
    // run_hello_word();
-   run_primitives();
+}
+
+#[allow(dead_code)]
+fn run_common_types() {
+   let rect = common_types::Rectangle {
+      top_left: common_types::Point { x: 10.0, y: 25.0 },
+      bottom_right: common_types::Point { x: 45.0, y: 10.0 },
+   };
+
+   println!("Rect area is: {:.1}", rect.area());
+
+   let rect = common_types::square(common_types::Point { x: 10.0, y: 10.0 }, 15.0);
+   println!("Your rect is {:?}", rect);
+}
+
+#[allow(dead_code)]
+fn run_primitives() {
+   let matrix = primitives::Matrix::new(1.1, 1.2, 2.1, 2.2);
+   println!("{}", matrix);
+
+   println!("Matrix:\n{}", matrix);
+   println!("Transpose:\n{}", primitives::tuples::transpose(matrix));
 }
 
 #[allow(dead_code)]
@@ -43,13 +67,4 @@ fn run_hello_word() {
    for color in colors.iter() {
       println!("{}", color)
    }
-}
-
-#[allow(dead_code)]
-fn run_primitives() {
-   let matrix = primitives::Matrix::new(1.1, 1.2, 2.1, 2.2);
-   println!("{}", matrix);
-
-   println!("Matrix:\n{}", matrix);
-   println!("Transpose:\n{}", primitives::tuples::transpose(matrix));
 }
